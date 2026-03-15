@@ -6,7 +6,7 @@ all: results/horse_pop_plot_largest_sd.png \
 	results/horses_spread.csv \
 	reports/qmd_example.html \
 	reports/qmd_example.pdf \
-	docs/qmd_example.html
+	docs/index.html
 
 
 
@@ -23,9 +23,9 @@ reports/qmd_example.pdf: results reports/qmd_example.qmd
 	quarto render reports/qmd_example.qmd --to pdf
 
 # make the report visible on the web 
-docs/qmd_example.html: results reports/qmd_example.html
+docs/index.html: results reports/qmd_example.html
 	mkdir -p docs
-	cp reports/qmd_example.html docs/qmd_example.html
+	cp reports/qmd_example.html docs/index.html
 
 # clean
 clean:
